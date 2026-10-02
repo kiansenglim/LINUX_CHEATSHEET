@@ -161,7 +161,51 @@ echo "Hello Linux"
 
 ### Write Output to a File
 ```bash
-echo ""
+echo "Hello Linux" > hello.txt
+```
+
+The `>` operator redirects the output into the file and **overwrites** existing content.
+The `>>` operator redirects the output into the file and **appends** or add content without deleting the existing content.
+
+---
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+
+## 7. View File Contents
+Use `cat` to display the contents of a file.
+```bash
+cat hello.txt
+```
+it is useful for quickly viewing small text files directly from the terminal.
+---
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+## 8. Copy Files
+Use `cp` to copy a file.
+```bash
+cp hello.txt hello-copy.txt
+```
+
+---
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+## 9. Move or Rename Files
+`mv` for both moving and renaming.
+```bash
+mv hello-copy.txt linux.txt
+```
+
+---
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+## 10. Delete Files
+Use `rm` to remove a file
+```bash
+rm linux.txt
 ```
 
 ---
@@ -169,10 +213,100 @@ echo ""
 [↑ Back to Table of Contents](#table-of-contents)
 
 
+## 11. open Folder in Windows Explorer
+When using Ubuntu on WSL2, open the current Linux directory in Windows File Explorer with 
+```bash
+explorer.exe .
+```
+The `.` means **current directory**.
+> **Note:** This requires Windows/WSL interoperability. It may not work from restricted environments such as Docker Desktop's internal Linux distribution.
+---
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+## 12. Open Folder in VS Code
+Open the current directory in VS Code
+```bash
+code .
+```
+---
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+## 13. Linux and Windows Paths in WSL
+WSL allows Linux to access Windows drives.
+
+---
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+## 14. Check Linux Information
+### Kernel and System Information
+```bash
+uname -a
+```
+This displays information about the Linux kernel and system architecture.
+
+A WSL2 kernel may contain:
+```text
+microsoft-standard-WSL2
+```
+
+### Linux Distribution Information
+```bash
+cat /etc/os-release
+```
+For Ubuntu
+```text
+NAME="Ubuntu"
+PRETTY_NAME="Ubuntu..."
+
+```
+---
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+## 15. Check Current User
+```bash
+whoami
+```
+Root has extensive permissions, so everyday dev should normally be performed as a regular user.
+---
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+## 16. Command Summary
+|Command|Purpose|
+|---|---|
+|`pwd`|Show current directory|
+|`ls`| List files and directories|
+|`ls -l`| Detailed file listing|
+|`ls -a`| Include hidden files|
+|`ls -la`| Detailed listing including hidden files|
+|`cd folder`| Enter a directory|
+|`cd ..`| Go up one directory|
+|`cd ~`| Go to home directory|
+|`cd -`| Return to previous directory|
+|`mkdir foler`| Create a directory|
+|`mkdir -p folder`| Create directory/parent path safety|
+|`touch file.txt`| Create emptyh file/update timestamp|
+|`echo "text"`| Print text|
+|`>`| Redirect output and overwrite|
+|`>>`| Redirect output and append|
+|`cat file.txt`| Display file contents|
+|`cp`| Copy|
+|`mv`| Move or rename|
+|`rm`| Remove|
+|`whoami`| Show current user|
+|`uname -a`| Show kernel/system information|
+|`cat /etc/os-release`| Show Linux distribution information|
+|`explorer.exe`| Open current WSL folder in Windows Explorer|
+|`code .`| Open current directory in VS COde|
 
 
+---
 
-
+[↑ Back to Table of Contents](#table-of-contents)
 
 
 
